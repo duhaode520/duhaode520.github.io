@@ -282,7 +282,7 @@ web_analytics:  # 网页访问统计
     app_key: LpmzHsANMQLDjIaop2DqJDev
     # REST API 服务器地址，国际版不填
     # Only the Chinese mainland users need to set
-    server_url:
+    server_url: https://da2hartu.lc-cn-n1-shared.com
     # 统计页面时获取路径的属性
     # Get the attribute of the page path during statistics
     path: window.location.pathname
@@ -580,6 +580,7 @@ post:
       # Data Source
       # Options: busuanzi | leancloud
       source: "leancloud"
+      format: "{} 次"
 
   # 在文章开头显示文章更新时间，该时间默认是 md 文件更新时间，可通过 front-matter 中 `updated` 手动指定（和 date 一样格式）
   # Update date is displayed at the beginning of the post. The default date is the update date of the md file, which can be manually specified by `updated` in front-matter (same format as date)
@@ -905,7 +906,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/bg/car-moon.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -934,7 +935,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/bg/car-moon.png
   banner_img_height: 80
   banner_mask_alpha: 0.3
   tagcloud:
