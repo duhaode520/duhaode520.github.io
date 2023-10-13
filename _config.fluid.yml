@@ -232,6 +232,18 @@ font:
 # 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
 custom_js:
+  # -/js/DynamicLines.js
+  - /js/DynamicRibbon.js
+  - /js/custom.js
+  # - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js # 动态彩带
+  # - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js # 运行时间
+  # - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Ribbon.min.js # 静态彩带
+  # - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.min.js # 动态黑色线条
+  # - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/snowflake.min.js # 小雪花飘落
+  # - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Cherry.min.js #樱花飘落
+  # - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/star.min.js # 鼠标跟随小星星
+  # - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/containsWord.min.js # 鼠标点击出字
+  # - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/love.min.js #鼠标点击出爱心
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
@@ -420,6 +432,12 @@ footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
   content: '
+    <div>
+      <span id="timeDate">载入天数...</span>
+      <span id="times">载入时分秒...</span>
+      <script src="/js/duration.js"></script>
+    </div>
+
     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
     <i class="iconfont icon-love"></i>
     <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
