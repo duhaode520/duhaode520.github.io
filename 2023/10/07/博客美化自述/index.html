@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://duhaode520.github.io/2023/10/07/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E8%87%AA%E8%BF%B0/pvuv.png">
 <meta property="og:image" content="https://duhaode520.github.io/2023/10/07/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E8%87%AA%E8%BF%B0/comments.png">
 <meta property="article:published_time" content="2023-10-07T10:57:42.000Z">
-<meta property="article:modified_time" content="2023-10-07T05:45:45.513Z">
+<meta property="article:modified_time" content="2023-10-13T03:16:35.058Z">
 <meta property="article:author" content="Ade">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://duhaode520.github.io/2023/10/07/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E8%87%AA%E8%BF%B0/%E6%B3%A8%E5%86%8C.png">
@@ -255,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          3.8k 字
         
       </span>
     
@@ -266,7 +266,7 @@
         
         
         
-          19 分钟
+          32 分钟
         
       </span>
     
@@ -338,6 +338,20 @@
 <h1 id="评论功能"><a href="#评论功能" class="headerlink" title="评论功能"></a>评论功能</h1><p>评论功能相关的代码同样是 Fluid 本身写好的，修改一些配置即可，我们这里使用基于 leancloud 的 valine 来配置</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">post:</span><br>  <span class="hljs-attr">comments:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-comment"># 指定的插件，需要同时设置对应插件的必要参数</span><br>    <span class="hljs-comment"># The specified plugin needs to set the necessary parameters at the same time</span><br>    <span class="hljs-comment"># Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus | discuss</span><br>    <span class="hljs-attr">type:</span> <span class="hljs-string">valine</span><br><br><span class="hljs-attr">valine:</span><br>  <span class="hljs-attr">appId:</span> <span class="hljs-string">你的</span> <span class="hljs-string">LeanCloud</span> <span class="hljs-string">AppID</span><br>  <span class="hljs-attr">appKey:</span> <span class="hljs-string">你的</span> <span class="hljs-string">LeanCloud</span> <span class="hljs-string">AppKey</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">window.location.pathname</span><br>  <span class="hljs-attr">placeholder:</span> <span class="hljs-string">说点什么...</span><br>  <span class="hljs-attr">avatar:</span> <span class="hljs-string">&#x27;retro&#x27;</span><br>  <span class="hljs-attr">meta:</span> [<span class="hljs-string">&#x27;nick&#x27;</span>, <span class="hljs-string">&#x27;mail&#x27;</span>, <span class="hljs-string">&#x27;link&#x27;</span>]<br>  <span class="hljs-attr">requiredFields:</span> []<br>  <span class="hljs-attr">pageSize:</span> <span class="hljs-number">10</span><br>  <span class="hljs-attr">lang:</span> <span class="hljs-string">&#x27;zh-CN&#x27;</span><br>  <span class="hljs-attr">highlight:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">recordIP:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">serverURLs:</span> <span class="hljs-string">&#x27;&#x27;</span><br>  <span class="hljs-attr">emojiCDN:</span><br>  <span class="hljs-attr">emojiMaps:</span><br>  <span class="hljs-attr">enableQQ:</span> <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
 <h2 id="页面效果-1"><a href="#页面效果-1" class="headerlink" title="页面效果"></a>页面效果</h2><p><img src="/2023/10/07/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E8%87%AA%E8%BF%B0/comments.png" srcset="/img/loading.gif" lazyload alt="发表评论"></p>
+<h1 id="其他插件"><a href="#其他插件" class="headerlink" title="其他插件"></a>其他插件</h1><p>这部分插件通常需要用到额外的 js&#x2F;css 文件，需要添加到 <code>source/js</code> 文件夹中</p>
+<blockquote>
+<p>所有这部分文件都可以在<a target="_blank" rel="noopener" href="https://github.com/duhaode520/duhaode520.github.io">博客原始 repo </a>的 source 文件夹中找到</p>
+</blockquote>
+<h2 id="添加主页创建时间"><a href="#添加主页创建时间" class="headerlink" title="添加主页创建时间"></a>添加主页创建时间</h2><p>在 <code>_config.fluid.yml</code> 中找到 <code>footer</code> 进行添加</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">footer:</span><br>  <span class="hljs-comment"># 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题</span><br>  <span class="hljs-comment"># HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people</span><br>  <span class="hljs-attr">content:</span> <span class="hljs-string">&#x27;</span><br><span class="hljs-string">    &lt;div&gt;</span><br><span class="hljs-string">      &lt;span id=&quot;timeDate&quot;&gt;载入天数...&lt;/span&gt;</span><br><span class="hljs-string">      &lt;span id=&quot;times&quot;&gt;载入时分秒...&lt;/span&gt;</span><br><span class="hljs-string">      &lt;script src=&quot;/js/duration.js&quot;&gt;&lt;/script&gt;</span><br><span class="hljs-string">    &lt;/div&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>然后创建文件 <code>source/js/duration.js</code>，其中内容如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">createtime</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">var</span> grt= <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-string">&quot;03/10/2023 00:00:00&quot;</span>);<span class="hljs-comment">//在此处修改你的建站时间，格式：月/日/年 时:分:秒</span><br>    now.<span class="hljs-title function_">setTime</span>(now.<span class="hljs-title function_">getTime</span>()+<span class="hljs-number">250</span>);<br>    days = (now - grt ) / <span class="hljs-number">1000</span> / <span class="hljs-number">60</span> / <span class="hljs-number">60</span> / <span class="hljs-number">24</span>; dnum = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(days);<br>    hours = (now - grt ) / <span class="hljs-number">1000</span> / <span class="hljs-number">60</span> / <span class="hljs-number">60</span> - (<span class="hljs-number">24</span> * dnum); hnum = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(hours);<br>    <span class="hljs-keyword">if</span>(<span class="hljs-title class_">String</span>(hnum).<span class="hljs-property">length</span> ==<span class="hljs-number">1</span> )&#123;hnum = <span class="hljs-string">&quot;0&quot;</span> + hnum;&#125; minutes = (now - grt ) / <span class="hljs-number">1000</span> /<span class="hljs-number">60</span> - (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * dnum) - (<span class="hljs-number">60</span> * hnum);<br>    mnum = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(minutes); <span class="hljs-keyword">if</span>(<span class="hljs-title class_">String</span>(mnum).<span class="hljs-property">length</span> ==<span class="hljs-number">1</span> )&#123;mnum = <span class="hljs-string">&quot;0&quot;</span> + mnum;&#125;<br>    seconds = (now - grt ) / <span class="hljs-number">1000</span> - (<span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * dnum) - (<span class="hljs-number">60</span> * <span class="hljs-number">60</span> * hnum) - (<span class="hljs-number">60</span> * mnum);<br>    snum = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">round</span>(seconds); <span class="hljs-keyword">if</span>(<span class="hljs-title class_">String</span>(snum).<span class="hljs-property">length</span> ==<span class="hljs-number">1</span> )&#123;snum = <span class="hljs-string">&quot;0&quot;</span> + snum;&#125;<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;timeDate&quot;</span>).<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&quot;本站已安全运行 &quot;</span>+dnum+<span class="hljs-string">&quot; 天 &quot;</span>;<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;times&quot;</span>).<span class="hljs-property">innerHTML</span> = hnum + <span class="hljs-string">&quot; 小时 &quot;</span> + mnum + <span class="hljs-string">&quot; 分 &quot;</span> + snum + <span class="hljs-string">&quot; 秒&quot;</span>;<br>&#125;<br><span class="hljs-built_in">setInterval</span>(<span class="hljs-string">&quot;createtime()&quot;</span>,<span class="hljs-number">250</span>);<br></code></pre></td></tr></table></figure>
+
+<h2 id="动态彩带"><a href="#动态彩带" class="headerlink" title="动态彩带"></a>动态彩带</h2><p>首先在 <code>_config.fluid.yml</code> 中找到 <code>custom.js</code> 进行添加:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">custom_js:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">/js/DynamicRobbin.js</span><br></code></pre></td></tr></table></figure>
+
+<p>然后添加文件 <code>source/js/DynamicRobbin.js</code>，在项目repo中直接拷贝即可：<a target="_blank" rel="noopener" href="https://github.com/duhaode520/duhaode520.github.io/tree/main/source/js/DynamicRobbin.js">https://github.com/duhaode520/duhaode520.github.io/tree/main/source/js/DynamicRobbin.js</a>  </p>
 
                 
               </div>
@@ -421,12 +435,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2023/10/13/hello-world/" title="Hello World">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/10/07/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2023/10/06/test-article/" title="测试文章">
+                        <span class="hidden-mobile">测试文章</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -560,7 +580,8 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+       <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div>
+<a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
     </div>
   
   
@@ -723,6 +744,11 @@
   <script  src="/js/local-search.js" ></script>
 
 
+
+
+  
+<script src="/js/DynamicRibbon.js"></script>
+<script src="/js/custom.js"></script>
 
 
 
