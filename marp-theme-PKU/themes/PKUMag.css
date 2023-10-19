@@ -88,7 +88,7 @@ header {
    height: 3cm;
    top:0px;
 
-   background-image: url("./images/PKUMag_header.png"); 
+   background-image: url("../images/PKUMag_header.png"); 
    background-position: left 0%;
    background-repeat: no-repeat;
    background-size: contain;
@@ -177,7 +177,7 @@ blockquote::before{
 /** 页面模版 **/
 /* Section title */
 section.title {
-   background-image: url("./images/PKUMag_title_bg.png");
+   background-image: url("../images/PKUMag_title_bg.png");
    background-size: 100% 100%;
    background-position: center top;
    background-repeat: no-repeat;
@@ -190,7 +190,7 @@ section.title h1 {
    font-size:60pt;
    font-family: 'Microsoft YaHei';
    background-color: var(--title-bg-color);
-   background-image: url("./images/PKUlogo_square.png");
+   background-image: url("../images/PKUlogo_square.png");
    background-position: center 20px;
    background-repeat: no-repeat;
    background-size: 150px;
@@ -243,7 +243,7 @@ section.title p{
 
 /* Content Page */
 section.content {
-   background-image: url("./images/PKUMag_content_bg.png");
+   background-image: url("../images/PKUMag_content_bg.png");
    background-size: auto 100%;
    background-position: left;
    background-repeat: no-repeat;
@@ -294,7 +294,7 @@ section.content h3 strong {
 
 /* Chapter Page */
 section.chapter {
-   background-image: url("./images/PKUMag_chapter_bg.png");
+   background-image: url("../images/PKUMag_chapter_bg.png");
    background-size: 100% 510px;
    background-position: top;
    background-repeat: no-repeat;
@@ -310,7 +310,7 @@ section.chapter h1 {
    font-family: 'Microsoft YaHei';
    font-weight: bolder;
    padding-left:180px;
-   background-image: url("./images/PKUlogo_square.png");
+   background-image: url("../images/PKUlogo_square.png");
    background-repeat: no-repeat;
    background-position: left 20px bottom 10px;
    background-size: 120px;
