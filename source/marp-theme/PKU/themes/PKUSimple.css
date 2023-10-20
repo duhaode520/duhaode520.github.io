@@ -85,7 +85,7 @@ header {
    right: 50px;
    top: 30px;
    height: 80px;
-   background-image: url("../images/PKUlogo_long.png"); 
+   background-image: url("https://duhaode520.github.io/marp-theme/PKU/images/PKUlogo_long.png"); 
    background-position: right top;
    background-repeat: no-repeat;
    background-size: 200px;
@@ -172,7 +172,7 @@ blockquote::before{
 /** 页面模版 **/
 /* Section title */
 section.title {
-   background-image: url("../images/PKUSimple_title_bg.png");
+   background-image: url("https://duhaode520.github.io/marp-theme/PKU/images/PKUSimple_title_bg.png");
    background-size: 100% 100%;
    background-position: center;
    background-repeat: no-repeat;
@@ -215,7 +215,7 @@ section.title p{
 
 /* Content Page */
 section.content {
-   background-image: url("../images/PKUSimple_content_bg.png");
+   background-image: url("https://duhaode520.github.io/marp-theme/PKU/images/PKUSimple_content_bg.png");
    background-size: 50% 100%;
    background-position: right;
    background-repeat: no-repeat;
@@ -253,7 +253,7 @@ section.content h3 strong {
 
 /* Chapter Page */
 section.chapter {
-   background-image: url("../images/PKUSimple_chapter_bg.png");
+   background-image: url("https://duhaode520.github.io/marp-theme/PKU/images/PKUSimple_chapter_bg.png");
    background-size: 100% 25%;
    background-position: center;
    background-repeat: no-repeat;
