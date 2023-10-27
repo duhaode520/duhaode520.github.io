@@ -1,0 +1,68 @@
+{
+	// Place your duhaode520.github.io 工作区 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Fluid info": {
+		"scope":"markdown", 
+		"prefix":"info",
+		"body":"{% note info %}\n ${1:content} \n{% endnote %}",
+		"description":"Fluid info tag"
+	},
+
+	"Fluid primary": {
+		"scope":"markdown", 
+		"prefix":"primary",
+		"body":"{% note primary %}\n ${1:content} \n{% endnote %}",
+		"description":"Fluid primary tag"
+	},
+
+	"Fluid success": {
+		"scope":"markdown", 
+		"prefix":"success",
+		"body":"{% note success %}\n ${1:content} \n{% endnote %}",
+		"description":"Fluid success tag"
+	},
+
+	"Fluid danger": {
+		"scope":"markdown", 
+		"prefix":"danger",
+		"body":"{% note danger %}\n ${1:content} \n{% endnote %}",
+		"description":"Fluid danger tag"
+	},
+
+	"Fluid warning": {
+		"scope":"markdown", 
+		"prefix":"warning",
+		"body":"{% note warning %}\n ${1:content} \n{% endnote %}",
+		"description":"Fluid warning tag"
+	},
+
+	"Fluid note": {
+		"scope":"markdown", 
+		"prefix":"note",
+		"body":"{% note ${1:type} %}\n ${2:content} \n{% endnote %}",
+		"description":"Fluid note"
+	},
+
+	"Fluid inline label": {
+		"scope":"markdown", 
+		"prefix":"label",
+		"body":"{% label ${1:type} @${2:content} %}",
+		"description":"Fluid inline labels, can be primary, default, info, success, warning, danger "
+	},
+
+	
+}
