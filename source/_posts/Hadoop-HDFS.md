@@ -2,6 +2,10 @@
 title: Hadoop HDFS
 date: 2023-03-07 20:17:27
 tags:
+    - Hadoop
+    - 引擎基础
+catagories:
+    - Hadoop 权威指南读书笔记
 ---
 {% note info %}
  《Hadoop 权威指南》读书笔记
