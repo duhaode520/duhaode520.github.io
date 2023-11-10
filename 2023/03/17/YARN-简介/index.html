@@ -16,23 +16,25 @@
   <meta name="author" content="Ade">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Hexo 建站过程Prerequisite 一个 Github 账号，申请教程  在电脑上安装 git，[git安装教程]在(https:&#x2F;&#x2F;blog.csdn.net&#x2F;yaorongke&#x2F;article&#x2F;details&#x2F;119085413)  在电脑上安装 NodeJS，NodeJS安装教程   Hexo 安装和本地测试 安装 hexo 1npm install -g hexo-cli  查看">
+    <meta name="description" content="Yarn的运行机制 Yarn中三类重要实体  resource manager：管理集群上资源使用 node manager：运行在所有节点上，能够启动和监控容器 Container：用于执行特定的应用程序，有一定的资源限制  运行流程：  客户端联系 resource manager，要求启动一个 application master 进程 resource manager 找到一个可以启动 a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo 建站总结">
-<meta property="og:url" content="https://duhaode520.github.io/2023/10/22/hexo-%E5%BB%BA%E7%AB%99/index.html">
+<meta property="og:title" content="Yarn 简介">
+<meta property="og:url" content="https://duhaode520.github.io/2023/03/17/YARN-%E7%AE%80%E4%BB%8B/index.html">
 <meta property="og:site_name" content="Ade&#39;s Blog">
-<meta property="og:description" content="Hexo 建站过程Prerequisite 一个 Github 账号，申请教程  在电脑上安装 git，[git安装教程]在(https:&#x2F;&#x2F;blog.csdn.net&#x2F;yaorongke&#x2F;article&#x2F;details&#x2F;119085413)  在电脑上安装 NodeJS，NodeJS安装教程   Hexo 安装和本地测试 安装 hexo 1npm install -g hexo-cli  查看">
+<meta property="og:description" content="Yarn的运行机制 Yarn中三类重要实体  resource manager：管理集群上资源使用 node manager：运行在所有节点上，能够启动和监控容器 Container：用于执行特定的应用程序，有一定的资源限制  运行流程：  客户端联系 resource manager，要求启动一个 application master 进程 resource manager 找到一个可以启动 a">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://duhaode520.github.io/2023/10/22/hexo-%E5%BB%BA%E7%AB%99/hexo_default.png">
-<meta property="article:published_time" content="2023-10-22T17:59:59.000Z">
-<meta property="article:modified_time" content="2023-11-10T02:16:37.858Z">
+<meta property="og:image" content="https://duhaode520.github.io/2023/03/17/YARN-%E7%AE%80%E4%BB%8B/yarn_arch.png">
+<meta property="article:published_time" content="2023-03-17T20:17:27.000Z">
+<meta property="article:modified_time" content="2023-11-10T02:16:37.854Z">
 <meta property="article:author" content="Ade">
+<meta property="article:tag" content="Hadoop">
+<meta property="article:tag" content="引擎基础">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://duhaode520.github.io/2023/10/22/hexo-%E5%BB%BA%E7%AB%99/hexo_default.png">
+<meta name="twitter:image" content="https://duhaode520.github.io/2023/03/17/YARN-%E7%AE%80%E4%BB%8B/yarn_arch.png">
   
   
   
-  <title>hexo 建站总结 - Ade&#39;s Blog</title>
+  <title>Yarn 简介 - Ade&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -227,7 +229,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">hexo 建站总结</span>
+            <span id="subtitle">Yarn 简介</span>
           
         </div>
 
@@ -238,8 +240,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-22 17:59" pubdate>
-          2023年10月22日 下午
+        <time datetime="2023-03-17 20:17" pubdate>
+          2023年3月17日 晚上
         </time>
       </span>
     
@@ -250,7 +252,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          847 字
+          1.5k 字
         
       </span>
     
@@ -261,7 +263,7 @@
         
         
         
-          8 分钟
+          13 分钟
         
       </span>
     
@@ -306,53 +308,76 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">hexo 建站总结</h1>
+            <h1 id="seo-header">Yarn 简介</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Hexo-建站过程"><a href="#Hexo-建站过程" class="headerlink" title="Hexo 建站过程"></a>Hexo 建站过程</h1><h2 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite"></a>Prerequisite</h2><ol>
-<li><p>一个 Github 账号，<a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119086305">申请教程</a></p>
+                <h2 id="Yarn的运行机制"><a href="#Yarn的运行机制" class="headerlink" title="Yarn的运行机制"></a>Yarn的运行机制</h2><p><img src="/2023/03/17/YARN-%E7%AE%80%E4%BB%8B/yarn_arch.png" srcset="/img/loading.gif" lazyload alt="Yarn 的运行机制"></p>
+<p>Yarn中三类重要实体</p>
+<ul>
+<li>resource manager：管理集群上资源使用</li>
+<li>node manager：运行在所有节点上，能够启动和监控容器</li>
+<li>Container：用于执行特定的应用程序，有一定的资源限制</li>
+</ul>
+<p>运行流程：</p>
+<ul>
+<li>客户端联系 resource manager，要求启动一个 application master 进程</li>
+<li>resource manager 找到一个可以启动 application master 的 node manager，然后启动这个容器<ul>
+<li>application运行起来后可能是返回一个计算 application 给客户端，也可能是执行分布式计算——申请资源、创建新的 application 和容器</li>
+</ul>
 </li>
-<li><p>在电脑上安装 git，[git安装教程]在(<a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119085413">https://blog.csdn.net/yaorongke/article/details/119085413</a>)</p>
-</li>
-<li><p>在电脑上安装 NodeJS，<a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119084295">NodeJS安装教程</a></p>
-</li>
-</ol>
-<h2 id="Hexo-安装和本地测试"><a href="#Hexo-安装和本地测试" class="headerlink" title="Hexo 安装和本地测试"></a>Hexo 安装和本地测试</h2><ol>
-<li><p>安装 hexo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install -g hexo-cli<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>查看 hexo 版本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo -v<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>创建 blog</p>
-<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dust"><span class="language-xml">hexo init </span><span class="hljs-template-variable">&#123;YOUR_BLOG_NAME&#125;</span><span class="language-xml"></span><br><span class="language-xml">cd </span><span class="hljs-template-variable">&#123;YOUR_BLOG_NAME&#125;</span><span class="language-xml"></span><br><span class="language-xml">npm install</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>blog的本地启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo g -d <span class="hljs-comment"># generate and deploy</span><br>hexo s <span class="hljs-comment"># server</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>浏览器访问 <code>http://localhost:4000</code> 即可打开新建的博客，页面的默认风格如下<br><img src="/2023/10/22/hexo-%E5%BB%BA%E7%AB%99/hexo_default.png" srcset="/img/loading.gif" lazyload alt="hexo默认页面"></p>
-</li>
-</ol>
-<p>Hexo 的默认主题可能比较丑陋，不过hexo本身提供了很多不同的主题，比较常用（互联网上资源较多的）有 <a target="_blank" rel="noopener" href="https://theme-next.js.org/">NeXT</a> 和 <a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/">Fluid</a></p>
-<h2 id="Github-pages部署"><a href="#Github-pages部署" class="headerlink" title="Github pages部署"></a>Github pages部署</h2><h1 id="Hexo-官方-Hello-world"><a href="#Hexo-官方-Hello-world" class="headerlink" title="Hexo 官方 Hello world"></a>Hexo 官方 Hello world</h1><div class="note note-info">
-            <p>这个官方的 Hello world 可以看做是一个操作手册</p>
+</ul>
+<p>Yarn 本身不提供通信机制，只是资源的申请分配</p>
+<p>申请分配为了节省带宽还是采用了在网络拓扑上的就近（节点——机架——any）</p>
+<p>按照用户和application之间来分类</p>
+<ul>
+<li>一个用户作业对应一个application：MapReduce</li>
+<li>用户作业中的一个工作流对应一个application：Spark</li>
+<li>多个也用户对一个 application： Slider</li>
+</ul>
+<div class="note note-primary">
+            <p>🔴 其实就是：一对一，一对多，多对一</p>
           </div>
 
-<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="Yarn的优势"><a href="#Yarn的优势" class="headerlink" title="Yarn的优势"></a>Yarn的优势</h2><ul>
+<li>Scalability：Yarn中对于jobtracker 的资源调度和任务监控的职责分离带来的好处</li>
+<li>Availability：同样是职责分离，resource manager 和 application master 可以分别做高可用</li>
+<li>Utilization: Yarn 对于资源的管理更精细，slot比较大</li>
+<li>Multitenancy：Yarn 可以为更多的应用提供服务，MapReduce仅是期中的一个</li>
+</ul>
+<h2 id="Yarn的调度"><a href="#Yarn的调度" class="headerlink" title="Yarn的调度"></a>Yarn的调度</h2><p>三种调度器：</p>
+<ul>
+<li><p>FIFO调度器：简单不用配置，不适合共享集群，每个任务必须都能到轮到自己才行</p>
+  <div class="note note-primary">
+            <p>感觉基本上只适合自己玩玩的时候用，或者资源特别丰盛的时候，每个人实际上own了一个集群可以自己玩     </p>
+          </div>   
+</li>
+<li><p><strong>容量调度器：</strong>有一个独立的队列保证小作业的提交和启动，大作业等待的时间相对长 (default)</p>
+</li>
+<li><p>公平调度器：每一个用户平分所有资源（在原有任务释放出来后），每一个用户的任务再分别平分这个用户拥有的所有的资源</p>
+</li>
+</ul>
+<p><strong>容量调度器的配置 <code>capacity-scheduler.xml</code>：</strong></p>
+<p>可以配置每一个队列拥有的固定的 capacity（%） 和用于弹性使用的 max capacity（不设置默认可以占用全部的容量）, 队列还可以通过 <code>a.b.queues</code> 的方式定义子队列</p>
+<p>通过属性 <code>mapreduce.job.queuename</code> 决定任务推送的队列</p>
+<p><strong>公平调度器的配置 <code>fair-scheduler.xml</code>：</strong></p>
+<ul>
+<li><p>权重元素：可以设置哪一个队列的占比更大，通过 <code>queue.weight</code> 属性</p>
+</li>
+<li><p>调度策略：默认是 fair，也可以有队列级的 fifo（只对该队列中的各个任务），DRF (Dominant Resource Fairness, 根据占用最多的资源进行 fair 调度)</p>
+</li>
+<li><p>可以通过 <code>queuePlacementPolicy</code> 设置队列放置规则，默认会有 “specified”, “user”, “primaryGroup”, “default” 等</p>
+  <div class="note note-primary">
+            <p>💡 如果只使用 default 则相当于便捷的实现了对于所有任务的公平调度，因为所有任务都会被塞进一个队列中</p>
+          </div>
+</li>
+<li><p>抢占：公平调度器允许抢占，但是抢占会降低集群的效率</p>
+</li>
+</ul>
+<p><strong><strong>延迟调度</strong></strong></p>
+<p>一个非常tricky的调度策略：如果请求节点容器时发现没有，可以等待数秒（数个heartbeat（一般是1s）），这样可以显著提高在当前节点获得一个容器的机会，而不是下一级节点（节点→机架→others）</p>
+<p>每一个 heartbeat 是一个潜在的调度机会</p>
 
                 
               </div>
@@ -361,27 +386,15 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
       
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99/" class="category-chain-item">博客建站</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
+        <a href="/tags/Hadoop/" class="print-no-link">#Hadoop</a>
+      
+        <a href="/tags/%E5%BC%95%E6%93%8E%E5%9F%BA%E7%A1%80/" class="print-no-link">#引擎基础</a>
+      
     </div>
-  
   
 </div>
 
@@ -391,8 +404,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>hexo 建站总结</div>
-      <div>https://duhaode520.github.io/2023/10/22/hexo-建站/</div>
+      <div>Yarn 简介</div>
+      <div>https://duhaode520.github.io/2023/03/17/YARN-简介/</div>
     </div>
     <div class="license-meta">
       
@@ -404,7 +417,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年10月22日</div>
+          <div>2023年3月17日</div>
         </div>
       
       
@@ -436,9 +449,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/10/22/VS-Code-Python-%E5%BC%80%E5%8F%91-QGIS-%E6%8F%92%E4%BB%B6%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/" title="VS Code + Python 开发 QGIS 插件环境配置指南">
+                      <a href="/2023/10/06/test-article/" title="测试文章">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">VS Code + Python 开发 QGIS 插件环境配置指南</span>
+                        <span class="hidden-mobile">测试文章</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -446,8 +459,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/10/07/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E8%87%AA%E8%BF%B0/" title="博客美化自述">
-                        <span class="hidden-mobile">博客美化自述</span>
+                      <a href="/2023/03/07/Hadoop-HDFS/" title="Hadoop HDFS">
+                        <span class="hidden-mobile">Hadoop HDFS</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
