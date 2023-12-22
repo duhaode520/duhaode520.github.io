@@ -16,26 +16,27 @@
   <meta name="author" content="Ade">
   <meta name="keywords" content="">
   
-    <meta name="description" content="这是一篇测试文章">
+    <meta name="description" content="Zookeeper 可以用来构建一般的分布式应用，对部分失败进行正确的处理              💡 什么是部分失败？简单来讲就是消息在网络中传输的一方不知道另一方是不是有问题，比如接受者down掉或者根本没有接受到，发送方是不能知道这条个操作是不是已经失败的             Zookeeper 的一些核心理念：  精简的文件系统 高可用性：避免出现单点故障，构建可靠应用 松耦合：让">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试文章">
-<meta property="og:url" content="https://duhaode520.github.io/2023/10/06/test-article/index.html">
+<meta property="og:title" content="Zookeeper简介">
+<meta property="og:url" content="https://duhaode520.github.io/2023/04/22/Zookeeper%E7%AE%80%E4%BB%8B/index.html">
 <meta property="og:site_name" content="Ade&#39;s Blog">
-<meta property="og:description" content="这是一篇测试文章">
+<meta property="og:description" content="Zookeeper 可以用来构建一般的分布式应用，对部分失败进行正确的处理              💡 什么是部分失败？简单来讲就是消息在网络中传输的一方不知道另一方是不是有问题，比如接受者down掉或者根本没有接受到，发送方是不能知道这条个操作是不是已经失败的             Zookeeper 的一些核心理念：  精简的文件系统 高可用性：避免出现单点故障，构建可靠应用 松耦合：让">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://duhaode520.github.io/2023/10/06/test-article/test.png">
-<meta property="og:image" content="https://duhaode520.github.io/2023/10/06/test-article/test.png">
-<meta property="og:image" content="https://duhaode520.github.io/images/test.png">
-<meta property="article:published_time" content="2023-10-06T00:48:42.000Z">
-<meta property="article:modified_time" content="2023-12-22T02:31:55.012Z">
+<meta property="og:image" content="https://duhaode520.github.io/2023/04/22/Zookeeper%E7%AE%80%E4%BB%8B/operation.png">
+<meta property="og:image" content="https://duhaode520.github.io/2023/04/22/Zookeeper%E7%AE%80%E4%BB%8B/znode_watcher.png">
+<meta property="og:image" content="https://duhaode520.github.io/2023/04/22/Zookeeper%E7%AE%80%E4%BB%8B/states.png">
+<meta property="article:published_time" content="2023-04-22T09:37:10.000Z">
+<meta property="article:modified_time" content="2023-12-22T02:31:55.008Z">
 <meta property="article:author" content="Ade">
-<meta property="article:tag" content="test">
+<meta property="article:tag" content="引擎基础">
+<meta property="article:tag" content="Zookeeper">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://duhaode520.github.io/2023/10/06/test-article/test.png">
+<meta name="twitter:image" content="https://duhaode520.github.io/2023/04/22/Zookeeper%E7%AE%80%E4%BB%8B/operation.png">
   
   
   
-  <title>测试文章 - Ade&#39;s Blog</title>
+  <title>Zookeeper简介 - Ade&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -230,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">测试文章</span>
+            <span id="subtitle">Zookeeper简介</span>
           
         </div>
 
@@ -241,8 +242,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-06 00:48" pubdate>
-          2023年10月6日 凌晨
+        <time datetime="2023-04-22 09:37" pubdate>
+          2023年4月22日 上午
         </time>
       </span>
     
@@ -253,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8 字
+          3.2k 字
         
       </span>
     
@@ -264,7 +265,7 @@
         
         
         
-          1 分钟
+          27 分钟
         
       </span>
     
@@ -309,16 +310,113 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">测试文章</h1>
+            <h1 id="seo-header">Zookeeper简介</h1>
             
             
               <div class="markdown-body">
                 
-                <p>这是一篇测试文章</p>
-<img src="/2023/10/06/test-article/test.png" srcset="/img/loading.gif" lazyload class="" title="图片引用方法一">
+                <p>Zookeeper 可以用来构建一般的分布式应用，对部分失败进行正确的处理</p>
+<div class="note note-primary">
+            <p>💡 什么是部分失败？简单来讲就是消息在网络中传输的一方不知道另一方是不是有问题，比如接受者down掉或者根本没有接受到，发送方是不能知道这条个操作是不是已经失败的</p>
+          </div>
 
-<p><img src="/2023/10/06/test-article/test.png" srcset="/img/loading.gif" lazyload alt="图片引用方法二"></p>
-<p><img src="/images/test.png" srcset="/img/loading.gif" lazyload alt="图片引用方法三"></p>
+<p>Zookeeper 的一些核心理念：</p>
+<ul>
+<li>精简的文件系统</li>
+<li>高可用性：避免出现单点故障，构建可靠应用</li>
+<li>松耦合：让<strong>进程在不了解其他进程（或网络状况）的情况</strong>下能够彼此发现并实现交互，甚至不要求二者是同时存在的</li>
+<li>高性能：10000ops +</li>
+</ul>
+<p>Zookeeper 的一些命令行指令：基本都是4个单词的，通常在 port：2181 进行监视</p>
+<h2 id="Zookeeper-服务"><a href="#Zookeeper-服务" class="headerlink" title="Zookeeper 服务"></a>Zookeeper 服务</h2><h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><p>Zookeeper 被设计用来实现协调服务，其数据的访问具有原子性</p>
+<div class="note note-primary">
+            <p>💡 也就是说与 HDFS 不同，其读取数据时不会出现部分读，要么成功，要么失败，同样的，对于写操作来说，其也会一次性更新 znode 中的所有数据，而不是只在最后进行添加。<br>Zookeeper保证了读写的原子性</p>
+          </div>
+
+<p><strong>znode</strong></p>
+<p>znode 分为短暂 znode 和永久 znode。其中永久 znode 需要显式地被删除，而短暂 znode 在<strong>当前客户端的会话</strong>结束时就会消失</p>
+<div class="note note-primary">
+            <p>💡 关于会话（session）和连接（connect）之间的区别，请看后文的内容</p>
+          </div>
+
+<p>短暂 znode 不可以用有子节点，其比较适合实现组成员管理，让进程知道特定的时刻有那些子成员可以被使用。</p>
+<div class="note note-info">
+            <p>💡 详情见 21.2.3, 21.2.4 中 <code>JoinNode</code> 和 <code>ListNode</code> 的例子，短暂 znode 添加的子成员能够被 <code>ListNode</code> 在他们不知情的情况下发现。</p>
+          </div>
+
+<p><strong><strong><strong>Sequence Number</strong></strong></strong></p>
+<p>顺序号可以给全局的同名时间排列顺序，比如两个先后有不同客户端创建的 znode 在 Zookeeper 路径中会被管理为 <code>/a/b-2</code> 和 <code>/a/b-3</code> 。顺序号并不会在路径访问中被显式需要。</p>
+<div class="note note-info">
+            <p>💡 顺序号涉及到了 Zookeeper 另外一个非常重要的功能，就是实现分布式锁</p>
+          </div>
+
+<p><strong>Watch</strong></p>
+<p>每一个 znode 都可以设置多个观察，有不同的对于 znode 的操作可以触发观察。观察在触发后会通知设置该观察的客户端，然后消失。</p>
+<div class="note note-info">
+            <p>💡 也就是说每一个观察只能触发一次，如果想要多次接受通知，需要不断的设置观察</p>
+          </div>
+
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><p><img src="/2023/04/22/Zookeeper%E7%AE%80%E4%BB%8B/operation.png" srcset="/img/loading.gif" lazyload alt="Operation list"></p>
+<p>在更新（ <code>setData</code> , <code>delete</code> 时需要提供版本号，可以由 <code>exists</code> 方法获取，且这个更新操作是非阻塞的（可能同时由其他的客户端在更新）</p>
+<p>Zookeeper 提供了一个 multi 的操作，可以将多个操作打包为一个原子性的操作，一起成功一起失败</p>
+<p>Zookeeper 提供了同步和异步的API，通常会使用异步的API以流水线的方式来处理请求。</p>
+<p><img src="/2023/04/22/Zookeeper%E7%AE%80%E4%BB%8B/znode_watcher.png" srcset="/img/loading.gif" lazyload alt="这个表提供了什么操作的可以对 znode 设置观察，以及他们是怎么被出发的"></p>
+<p>这个表提供了什么操作的可以对 znode 设置观察，以及他们是怎么被出发的</p>
+<p>Zookeeper 还提供了权限管理的功能，用户登录需要通过身份验证（IP，或者密码组合等方式）来获取自己的 ACL (Access Control List) </p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>有两种模式：standalone（单机）、replicated</p>
+<p>在复制模式先，需要集群中有超过一半的机器可用，所以一般 Zookeeper 集群中总是有单数台机器（比如5台-容忍2台宕机，但是 6台服务器同样只能容忍2台宕机）</p>
+<p>一般有两个阶段</p>
+<ol>
+<li>领导者选举：选出一台保持最新状态的 leader，其他人成为 follower</li>
+<li>原子广播：所有对于 znode 的更改都会现在 leader 中更改并持久化，然后 leader 才回广播这个修改，而且这个达成协议的过程对于每一个节点都是原子性的。</li>
+<li>一旦领导者出现问题，会快速再选选举一个领导者，然后恢复正常的原 leader 会自动不变为 follower</li>
+</ol>
+<h3 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h3><p>一个 follower 可能落后 leader 数个版本，可以通过 <code>sync()</code> 函数完成一致性更新。</p>
+<p>每个 Client 并不知道自己连接到的是 follower 还是 leader，但是只有他重新连接，他就不会连接到比自己原先更老的服务器版本，这一点有 znode 顺序号进行保证。</p>
+<p>顺序一致性、操作原子性、更新持久性等均可以实现对于 Zookeeper 的一致性保证</p>
+<h3 id="会话"><a href="#会话" class="headerlink" title="会话"></a>会话</h3><p>客户端一旦与一个 Zookeeper 服务器建立连接就产生了一个 Session，客户端可以定期发送 ping 信号来保证 session 不过期</p>
+<div class="note note-primary">
+            <p>💡 session 连接的 Zookeeper 服务器故障后，Zookeeper 保证了对于服务器的自动切换，所有与故障服务器相关的 session 在切换后仍然是有效的，这个切换过程对于用户是透明的</p>
+          </div>
+
+<p>ping 的时间通常会设置为 2~20 个 tick，tick一般为 2s</p>
+<p>通常来说，服务器越多，构建的暂时状态越复杂，越应该设置较长的 ping 时间</p>
+<h3 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h3><p>状态图如下，一个 Zookeeper 对象只能出于一种状态，同时状态的切换会出发 watcher</p>
+<p><img src="/2023/04/22/Zookeeper%E7%AE%80%E4%BB%8B/states.png" srcset="/img/loading.gif" lazyload alt="States"></p>
+<h2 id="Zookeeper-构建应用"><a href="#Zookeeper-构建应用" class="headerlink" title="Zookeeper 构建应用"></a>Zookeeper 构建应用</h2><h3 id="配置服务"><a href="#配置服务" class="headerlink" title="配置服务"></a>配置服务</h3><p>Zookeeper 可以作为一个高可用的配置存储器，允许分布式应用的参与者检索和更新配置文件</p>
+<p>可以利用 znode 以键值对的方式存储配置，并提供多种层级的支持</p>
+<p>利用 Watcher 观察 <code>NodeDataChanged</code> 事件来在不同的客户端中同步配置</p>
+<h3 id="可复原的-Zookeeper-应用"><a href="#可复原的-Zookeeper-应用" class="headerlink" title="可复原的 Zookeeper 应用"></a>可复原的 Zookeeper 应用</h3><p>捕捉 <code>KeeperException</code> ，并根据其类别来对应用进行恢复</p>
+<p>要注意幂等和非幂等操作的区别，幂等操作可以多次重复，而非幂等操作啧不能盲目的重试</p>
+<h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><p>提供一组进程间的互斥机制，可以用于在大型分布式系统中实现领导者选举，持有锁的进程就是领导者</p>
+<p>思路很简单，创建一个锁的 znode，然后在他的下面创建一些子 znode，如 <code>/leader/lock-1</code>, <code>/leader/lock-2,</code> 任何时候顺序小的持有锁</p>
+<p>申请获取锁的伪代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">1.</span> Create an ephemeral sequential znode named lock- under the lock znode, and<br>remember its actual <span class="hljs-title function_">pathname</span> <span class="hljs-params">(the return value of the create operation)</span>.<br><span class="hljs-number">2.</span> Get the children of the lock znode and set a watch.<br><span class="hljs-number">3.</span> If the pathname of the znode created in step <span class="hljs-number">1</span> has the lowest number of the children<br>returned in step <span class="hljs-number">2</span>, then the lock has been acquired. Exit.<br><span class="hljs-number">4.</span> Wait <span class="hljs-keyword">for</span> the notification from the watch set in step <span class="hljs-number">2</span>, and go to step <span class="hljs-number">2.</span><br></code></pre></td></tr></table></figure>
+
+<p>两个潜在的问题：</p>
+<p><strong><strong>羊群效应</strong></strong></p>
+<ul>
+<li>解释：每个 client 都会在锁 znode 上放置一个观察，每次状态变化时会可能会有大量的客户端受到同一事件的通知，但是只有很少一部分需要处理这个事件，这样会造成网络带宽的峰值压力过大</li>
+<li>解决：只在当前子节点消失时，通知其下一个子节点</li>
+</ul>
+<p><strong><strong>可恢复异常</strong></strong></p>
+<ul>
+<li>描述：在创建锁 znode 时，我们不能处理由于连接丢失导致的创建失败（partial failure)。我们不能简单的进行重试，否则会出现孤儿 znode</li>
+<li>解决：在znode中加入 sessionID，构成 <code>lock-&lt;sessionID&gt;-&lt;sequenceNumber&gt;</code> 的名称序列，在重新连接时进行搜索。</li>
+</ul>
+<h2 id="生产环境"><a href="#生产环境" class="headerlink" title="生产环境"></a>生产环境</h2><p>还会存在除了 leader 和 follower 之外的角色：observer，是没有投票权的跟随者，可以将 observer 放置在不同于 leader 和 follower 的机架中，这样既不影响性能，也能够提高整个 Zookeeper 服务的可用性</p>
+<p>主要使用 3 个端口：</p>
+<ul>
+<li>2181：客户端连接</li>
+<li>2888：对于 leader 来说，follower 从这个端口进行连接</li>
+<li>3888：领导者选举阶段的其他服务器连接</li>
+</ul>
+<p>应用：</p>
+<ul>
+<li>为 HDFS 的 Namenode 提供高可用性支持</li>
+<li>为 Yarn 的 resourcemanager 提供高可用支持</li>
+</ul>
+<p>主要是快速的主备切换</p>
 
                 
               </div>
@@ -327,32 +425,13 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/test/" class="category-chain-item">test</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/test/" class="print-no-link">#test</a>
+        <a href="/tags/%E5%BC%95%E6%93%8E%E5%9F%BA%E7%A1%80/" class="print-no-link">#引擎基础</a>
+      
+        <a href="/tags/Zookeeper/" class="print-no-link">#Zookeeper</a>
       
     </div>
   
@@ -364,8 +443,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>测试文章</div>
-      <div>https://duhaode520.github.io/2023/10/06/test-article/</div>
+      <div>Zookeeper简介</div>
+      <div>https://duhaode520.github.io/2023/04/22/Zookeeper简介/</div>
     </div>
     <div class="license-meta">
       
@@ -377,7 +456,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年10月6日</div>
+          <div>2023年4月22日</div>
         </div>
       
       
@@ -409,9 +488,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/10/07/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E8%87%AA%E8%BF%B0/" title="博客美化自述">
+                      <a href="/2023/10/06/test-article/" title="测试文章">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">博客美化自述</span>
+                        <span class="hidden-mobile">测试文章</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -419,8 +498,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/04/22/Zookeeper%E7%AE%80%E4%BB%8B/" title="Zookeeper简介">
-                        <span class="hidden-mobile">Zookeeper简介</span>
+                      <a href="/2023/04/01/HDFS-I-O/" title="HDFS I/O">
+                        <span class="hidden-mobile">HDFS I/O</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -16,26 +16,23 @@
   <meta name="author" content="Ade">
   <meta name="keywords" content="">
   
-    <meta name="description" content="这是一篇测试文章">
+    <meta name="description" content="使用场景在很多情况下可能都会出现这样的场景：我们想要基于一个远程server的ip来对某些网页进行访问，但是服务器通常是没有GUI端的 Linux 系统：  服务器需要特殊的网关登录才能够上网，需要在指定的内网 IP 下才能访问网关 服务器部署在内网内，需要从内网访问某些资源 在虚拟机&#x2F;容器内部署了一套集群，组件（例如 Hadoop，Spark）的 WebUI 和监控需要从指定的端口进行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试文章">
-<meta property="og:url" content="https://duhaode520.github.io/2023/10/06/test-article/index.html">
+<meta property="og:title" content="利用本地浏览器在远程服务器上进行访问">
+<meta property="og:url" content="https://duhaode520.github.io/2023/12/22/%E5%88%A9%E7%94%A8%E6%9C%AC%E5%9C%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E8%BF%9B%E8%A1%8C%E8%AE%BF%E9%97%AE/index.html">
 <meta property="og:site_name" content="Ade&#39;s Blog">
-<meta property="og:description" content="这是一篇测试文章">
+<meta property="og:description" content="使用场景在很多情况下可能都会出现这样的场景：我们想要基于一个远程server的ip来对某些网页进行访问，但是服务器通常是没有GUI端的 Linux 系统：  服务器需要特殊的网关登录才能够上网，需要在指定的内网 IP 下才能访问网关 服务器部署在内网内，需要从内网访问某些资源 在虚拟机&#x2F;容器内部署了一套集群，组件（例如 Hadoop，Spark）的 WebUI 和监控需要从指定的端口进行">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://duhaode520.github.io/2023/10/06/test-article/test.png">
-<meta property="og:image" content="https://duhaode520.github.io/2023/10/06/test-article/test.png">
-<meta property="og:image" content="https://duhaode520.github.io/images/test.png">
-<meta property="article:published_time" content="2023-10-06T00:48:42.000Z">
-<meta property="article:modified_time" content="2023-12-22T02:31:55.012Z">
+<meta property="og:image" content="https://duhaode520.github.io/2023/12/22/%E5%88%A9%E7%94%A8%E6%9C%AC%E5%9C%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E8%BF%9B%E8%A1%8C%E8%AE%BF%E9%97%AE/proxy.png">
+<meta property="article:published_time" content="2023-12-22T09:57:07.000Z">
+<meta property="article:modified_time" content="2023-12-22T02:31:55.016Z">
 <meta property="article:author" content="Ade">
-<meta property="article:tag" content="test">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://duhaode520.github.io/2023/10/06/test-article/test.png">
+<meta name="twitter:image" content="https://duhaode520.github.io/2023/12/22/%E5%88%A9%E7%94%A8%E6%9C%AC%E5%9C%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E8%BF%9B%E8%A1%8C%E8%AE%BF%E9%97%AE/proxy.png">
   
   
   
-  <title>测试文章 - Ade&#39;s Blog</title>
+  <title>利用本地浏览器在远程服务器上进行访问 - Ade&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -230,7 +227,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">测试文章</span>
+            <span id="subtitle">利用本地浏览器在远程服务器上进行访问</span>
           
         </div>
 
@@ -241,8 +238,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-06 00:48" pubdate>
-          2023年10月6日 凌晨
+        <time datetime="2023-12-22 09:57" pubdate>
+          2023年12月22日 上午
         </time>
       </span>
     
@@ -253,7 +250,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8 字
+          612 字
         
       </span>
     
@@ -264,7 +261,7 @@
         
         
         
-          1 分钟
+          6 分钟
         
       </span>
     
@@ -309,17 +306,30 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">测试文章</h1>
+            <h1 id="seo-header">利用本地浏览器在远程服务器上进行访问</h1>
             
             
               <div class="markdown-body">
                 
-                <p>这是一篇测试文章</p>
-<img src="/2023/10/06/test-article/test.png" srcset="/img/loading.gif" lazyload class="" title="图片引用方法一">
+                <h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><p>在很多情况下可能都会出现这样的场景：我们想要基于一个远程server的ip来对某些网页进行访问，但是服务器通常是没有GUI端的 Linux 系统：</p>
+<ul>
+<li>服务器需要特殊的网关登录才能够上网，需要在指定的内网 IP 下才能访问网关</li>
+<li>服务器部署在内网内，需要从内网访问某些资源</li>
+<li>在虚拟机&#x2F;容器内部署了一套集群，组件（例如 Hadoop，Spark）的 WebUI 和监控需要从指定的端口进行访问，然而端口太多，全部映射出来不方便</li>
+</ul>
+<p>虽然可以在服务器安装 GUI 后在利用 remote desktop 进行访问，但是这样其实也是比较麻烦的，同时一些GUI可能在云服务器上的安装是不被允许的</p>
+<p>所以我们想要找到一个方法，能够在本地浏览器上，基于远程服务器的 IP，进行网页访问</p>
+<p>一个比较快捷的方法是配置 socks5 代理</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>首先需要用 ssh 配置一个端口转发</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh —D[Port] username@host <br><span class="hljs-comment"># 如果server的登录需要指定端口</span><br>ssh -D[port] username@host -p [LoginPort]<br></code></pre></td></tr></table></figure>
 
-<p><img src="/2023/10/06/test-article/test.png" srcset="/img/loading.gif" lazyload alt="图片引用方法二"></p>
-<p><img src="/images/test.png" srcset="/img/loading.gif" lazyload alt="图片引用方法三"></p>
-
+<p>然后再在浏览器中配置 socks5 代理</p>
+<p><img src="/2023/12/22/%E5%88%A9%E7%94%A8%E6%9C%AC%E5%9C%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9C%A8%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E8%BF%9B%E8%A1%8C%E8%AE%BF%E9%97%AE/proxy.png" srcset="/img/loading.gif" lazyload alt="proxy"></p>
+<p>代理协议选择 SOCKS5，代理服务器选择 localhost，端口选择之前端口转发配置的 <code>[Port]</code>，在这里我们用了20000</p>
+<p>在配置好这个代理之后就可以使用这个代理在远程服务器上进行上网</p>
+<div class="note note-info">
+            <p>Chrome 浏览器目前无法直接配置 SOCKS5 代理，需要下载插件 <a target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif">Proxy SwitchOmege</a><br>Firefox 可以直接配置</p>
+          </div>
                 
               </div>
             
@@ -337,7 +347,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/test/" class="category-chain-item">test</a>
+  <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="category-chain-item">环境配置</a>
   
   
 
@@ -349,13 +359,6 @@
     </div>
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/test/" class="print-no-link">#test</a>
-      
-    </div>
-  
 </div>
 
 
@@ -364,8 +367,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>测试文章</div>
-      <div>https://duhaode520.github.io/2023/10/06/test-article/</div>
+      <div>利用本地浏览器在远程服务器上进行访问</div>
+      <div>https://duhaode520.github.io/2023/12/22/利用本地浏览器在远程服务器上进行访问/</div>
     </div>
     <div class="license-meta">
       
@@ -377,7 +380,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年10月6日</div>
+          <div>2023年12月22日</div>
         </div>
       
       
@@ -409,18 +412,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/10/07/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E8%87%AA%E8%BF%B0/" title="博客美化自述">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">博客美化自述</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/04/22/Zookeeper%E7%AE%80%E4%BB%8B/" title="Zookeeper简介">
-                        <span class="hidden-mobile">Zookeeper简介</span>
+                      <a href="/2023/10/22/VS-Code-Python-%E5%BC%80%E5%8F%91-QGIS-%E6%8F%92%E4%BB%B6%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/" title="VS Code + Python 开发 QGIS 插件环境配置指南">
+                        <span class="hidden-mobile">VS Code + Python 开发 QGIS 插件环境配置指南</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
